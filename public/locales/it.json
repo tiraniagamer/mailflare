@@ -970,7 +970,7 @@
 	"onboarding.mailboxAddress": "Indirizzo della casella",
 	"onboarding.goToInbox": "Vai alla posta in arrivo",
 	"home.homeLabel": "Home di {app}",
-	"home.headline": "La posta di {brand}.",
+	"home.headline": "La tua email ufficiale di {brand}.",
 	"home.subheadline": "Account riservati ai membri dell'amministrazione. Leggi, rispondi e organizza la posta da qualsiasi browser.",
 	"home.access.title": "Non hai ancora un account?",
 	"home.access.description": "Solo il proprietario può creare account. Per richiedere il tuo:",

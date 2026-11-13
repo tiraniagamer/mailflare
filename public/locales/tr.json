@@ -955,7 +955,7 @@
 	"onboarding.mailboxAddress": "Posta kutusu adresi",
 	"onboarding.goToInbox": "Gelen kutusuna git",
 	"home.homeLabel": "{app} ana sayfa",
-	"home.headline": "{brand} e-postası.",
+	"home.headline": "Resmî {brand} e-postan.",
 	"home.subheadline": "Hesaplar yalnızca yönetim üyeleri içindir. E-postalarını her tarayıcıdan oku, yanıtla ve düzenle.",
 	"home.access.title": "Henüz hesabın yok mu?",
 	"home.access.description": "Hesapları yalnızca sahip oluşturabilir. Hesabını istemek için:",

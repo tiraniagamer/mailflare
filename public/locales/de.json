@@ -964,7 +964,7 @@
 	"onboarding.mailboxAddress": "Postfachadresse",
 	"onboarding.goToInbox": "Zum Posteingang",
 	"home.homeLabel": "{app} Startseite",
-	"home.headline": "Die E-Mail von {brand}.",
+	"home.headline": "Deine offizielle {brand}-E-Mail.",
 	"home.subheadline": "Konten nur für Mitglieder der Administration. Lies, beantworte und organisiere deine E-Mails in jedem Browser.",
 	"home.access.title": "Noch kein Konto?",
 	"home.access.description": "Nur der Owner kann Konten anlegen. So beantragst du deins:",

@@ -976,7 +976,7 @@
 	"onboarding.mailboxAddress": "Адрес почтового ящика",
 	"onboarding.goToInbox": "Перейти во входящие",
 	"home.homeLabel": "{app} — главная",
-	"home.headline": "Почта {brand}.",
+	"home.headline": "Ваша официальная почта {brand}.",
 	"home.subheadline": "Учётные записи только для членов администрации. Читайте, отвечайте и упорядочивайте почту в любом браузере.",
 	"home.access.title": "Ещё нет учётной записи?",
 	"home.access.description": "Создавать учётные записи может только владелец. Чтобы запросить свою:",

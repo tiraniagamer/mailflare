@@ -958,7 +958,7 @@
 	"onboarding.mailboxAddress": "メールボックスのアドレス",
 	"onboarding.goToInbox": "受信トレイへ移動",
 	"home.homeLabel": "{app} ホーム",
-	"home.headline": "{brand} のメール。",
+	"home.headline": "あなたの {brand} 公式メール。",
 	"home.subheadline": "アカウントは運営メンバー専用です。どのブラウザからでもメールを読み、返信し、整理できます。",
 	"home.access.title": "まだアカウントをお持ちでないですか？",
 	"home.access.description": "アカウントを作成できるのはオーナーだけです。申請方法：",

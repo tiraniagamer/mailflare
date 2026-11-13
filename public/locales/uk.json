@@ -976,7 +976,7 @@
 	"onboarding.mailboxAddress": "Адреса поштової скриньки",
 	"onboarding.goToInbox": "Перейти до вхідних",
 	"home.homeLabel": "Головна {app}",
-	"home.headline": "Пошта {brand}.",
+	"home.headline": "Ваша офіційна пошта {brand}.",
 	"home.subheadline": "Облікові записи лише для членів адміністрації. Читайте, відповідайте та впорядковуйте пошту в будь-якому браузері.",
 	"home.access.title": "Ще немає облікового запису?",
 	"home.access.description": "Створювати облікові записи може лише власник. Щоб попросити свій:",

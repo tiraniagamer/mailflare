@@ -970,7 +970,7 @@
 	"onboarding.mailboxAddress": "Endereço da caixa de correio",
 	"onboarding.goToInbox": "Ir para a caixa de entrada",
 	"home.homeLabel": "Página inicial de {app}",
-	"home.headline": "O e-mail da {brand}.",
+	"home.headline": "Seu e-mail oficial da {brand}.",
 	"home.subheadline": "Contas exclusivas para membros da administração. Leia, responda e organize o e-mail em qualquer navegador.",
 	"home.access.title": "Ainda não tem conta?",
 	"home.access.description": "Só o dono pode criar contas. Para pedir a sua:",

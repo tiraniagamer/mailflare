@@ -962,7 +962,7 @@
 	"onboarding.mailboxAddress": "మెయిల్‌బాక్స్ చిరునామా",
 	"onboarding.goToInbox": "ఇన్‌బాక్స్‌కు వెళ్లండి",
 	"home.homeLabel": "{app} హోమ్",
-	"home.headline": "{brand} ఇమెయిల్.",
+	"home.headline": "మీ అధికారిక {brand} ఇమెయిల్.",
 	"home.subheadline": "ఖాతాలు నిర్వహణ సభ్యులకు మాత్రమే. ఏ బ్రౌజర్ నుండైనా ఇమెయిల్‌ను చదవండి, ప్రత్యుత్తరం ఇవ్వండి, నిర్వహించండి.",
 	"home.access.title": "ఇంకా ఖాతా లేదా?",
 	"home.access.description": "యజమాని మాత్రమే ఖాతాలను సృష్టించగలరు. మీ ఖాతాను కోరడానికి:",

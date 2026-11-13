@@ -976,7 +976,7 @@
 	"onboarding.mailboxAddress": "Adres skrzynki pocztowej",
 	"onboarding.goToInbox": "Przejdź do odebranych",
 	"home.homeLabel": "Strona główna {app}",
-	"home.headline": "Poczta {brand}.",
+	"home.headline": "Twoja oficjalna poczta {brand}.",
 	"home.subheadline": "Konta tylko dla członków administracji. Czytaj, odpowiadaj i porządkuj pocztę w dowolnej przeglądarce.",
 	"home.access.title": "Nie masz jeszcze konta?",
 	"home.access.description": "Konta może zakładać tylko właściciel. Aby poprosić o swoje:",

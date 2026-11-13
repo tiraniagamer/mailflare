@@ -962,7 +962,7 @@
 	"onboarding.mailboxAddress": "মেইলবক্সের ঠিকানা",
 	"onboarding.goToInbox": "ইনবক্সে যান",
 	"home.homeLabel": "{app} হোম",
-	"home.headline": "{brand}-এর ইমেল।",
+	"home.headline": "আপনার অফিসিয়াল {brand} ইমেল।",
 	"home.subheadline": "অ্যাকাউন্ট শুধু প্রশাসনের সদস্যদের জন্য। যেকোনো ব্রাউজার থেকে ইমেল পড়ুন, উত্তর দিন ও সাজান।",
 	"home.access.title": "এখনও অ্যাকাউন্ট নেই?",
 	"home.access.description": "শুধু মালিকই অ্যাকাউন্ট তৈরি করতে পারেন। আপনারটি চাইতে:",

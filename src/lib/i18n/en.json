@@ -995,7 +995,7 @@
 	"onboarding.mailboxAddress": "Mailbox address",
 	"onboarding.goToInbox": "Go to inbox",
 	"home.homeLabel": "{app} home",
-	"home.headline": "Email for {brand}.",
+	"home.headline": "Your official {brand} email.",
 	"home.subheadline": "Accounts are reserved for members of the administration. Read, reply to and organize your email from any browser.",
 	"home.access.title": "Don't have an account yet?",
 	"home.access.description": "Only the owner can create accounts. To request yours:",

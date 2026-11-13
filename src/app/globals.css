@@ -20,27 +20,6 @@
 	--no-font-mono: var(--font-geist-mono);
 }
 
-/* TiraníaGamer brand palette (brand guide), used by the public landing page. These are fixed values on
-   purpose: the `.dark` block below remaps neutral, white and blue, and the brand must not follow it. */
-@theme {
-	--color-tg-celeste: #0d78f2;
-	--color-tg-celeste-light: #4fb6ff;
-	--color-tg-celeste-deep: #0a4fad;
-	--color-tg-celeste-bg: #0a1f3d;
-	--color-tg-on-celeste: #ffffff;
-	--color-tg-silver: #cdd8e3;
-	--color-tg-silver-bg: #16222f;
-	--color-tg-plate: #020914;
-	--color-tg-canvas: #05101f;
-	--color-tg-surface: #081c31;
-	--color-tg-elevated: #0e2947;
-	--color-tg-line: #132842;
-	--color-tg-line-strong: #1c3e60;
-	--color-tg-fg: #eaf2fa;
-	--color-tg-fg-muted: #a8c0d8;
-	--color-tg-fg-dim: #6e8caa;
-}
-
 body {
 	background: var(--background);
 	color: var(--foreground);

@@ -970,7 +970,7 @@
 	"onboarding.mailboxAddress": "Adresse de la boîte mail",
 	"onboarding.goToInbox": "Aller à la boîte de réception",
 	"home.homeLabel": "Accueil {app}",
-	"home.headline": "La messagerie de {brand}.",
+	"home.headline": "Votre messagerie officielle {brand}.",
 	"home.subheadline": "Comptes réservés aux membres de l'administration. Lisez, répondez et organisez vos e-mails depuis n'importe quel navigateur.",
 	"home.access.title": "Pas encore de compte ?",
 	"home.access.description": "Seul le propriétaire peut créer des comptes. Pour demander le vôtre :",

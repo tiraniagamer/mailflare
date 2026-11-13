@@ -964,7 +964,7 @@
 	"onboarding.mailboxAddress": "نشانی صندوق پستی",
 	"onboarding.goToInbox": "رفتن به صندوق ورودی",
 	"home.homeLabel": "صفحه اصلی {app}",
-	"home.headline": "ایمیل {brand}.",
+	"home.headline": "ایمیل رسمی شما در {brand}.",
 	"home.subheadline": "حساب‌ها فقط برای اعضای مدیریت است. ایمیل را از هر مرورگری بخوانید، پاسخ دهید و مرتب کنید.",
 	"home.access.title": "هنوز حساب ندارید؟",
 	"home.access.description": "فقط مالک می‌تواند حساب بسازد. برای درخواست حساب خود:",

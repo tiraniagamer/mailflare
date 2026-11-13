@@ -964,7 +964,7 @@
 	"onboarding.mailboxAddress": "मेलबॉक्स का पता",
 	"onboarding.goToInbox": "इनबॉक्स पर जाएँ",
 	"home.homeLabel": "{app} होम",
-	"home.headline": "{brand} का ईमेल।",
+	"home.headline": "आपका आधिकारिक {brand} ईमेल।",
 	"home.subheadline": "खाते केवल प्रशासन के सदस्यों के लिए हैं। किसी भी ब्राउज़र से ईमेल पढ़ें, जवाब दें और व्यवस्थित करें।",
 	"home.access.title": "अभी तक खाता नहीं है?",
 	"home.access.description": "केवल मालिक ही खाते बना सकता है। अपना खाता माँगने के लिए:",

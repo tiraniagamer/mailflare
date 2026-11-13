@@ -964,7 +964,7 @@
 	"onboarding.mailboxAddress": "තැපැල් පෙට්ටි ලිපිනය",
 	"onboarding.goToInbox": "එන ලිපි වෙත යන්න",
 	"home.homeLabel": "{app} මුල් පිටුව",
-	"home.headline": "{brand} ඊමේල්.",
+	"home.headline": "ඔබේ නිල {brand} ඊමේල්.",
 	"home.subheadline": "ගිණුම් පරිපාලන සාමාජිකයින්ට පමණි. ඕනෑම බ්‍රවුසරයකින් ඊමේල් කියවන්න, පිළිතුරු දෙන්න සහ සංවිධානය කරන්න.",
 	"home.access.title": "තවම ගිණුමක් නැද්ද?",
 	"home.access.description": "ගිණුම් සෑදිය හැක්කේ හිමිකරුට පමණි. ඔබේ ගිණුම ඉල්ලීමට:",

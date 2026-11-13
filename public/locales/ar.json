@@ -988,7 +988,7 @@
 	"onboarding.mailboxAddress": "عنوان صندوق البريد",
 	"onboarding.goToInbox": "الانتقال إلى صندوق الوارد",
 	"home.homeLabel": "الصفحة الرئيسية لـ {app}",
-	"home.headline": "بريد {brand}.",
+	"home.headline": "بريدك الرسمي في {brand}.",
 	"home.subheadline": "الحسابات مخصصة لأعضاء الإدارة فقط. اقرأ بريدك وردّ عليه ونظّمه من أي متصفح.",
 	"home.access.title": "ليس لديك حساب بعد؟",
 	"home.access.description": "لا يمكن إنشاء الحسابات إلا من قِبل المالك. لطلب حسابك:",
