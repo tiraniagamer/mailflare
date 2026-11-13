@@ -5,8 +5,9 @@ import { locales, supportedLocales } from "@/lib/i18n/locales";
 import { resolveLocale } from "@/lib/i18n/utils";
 import { useLanguage } from "./language-provider";
 import { Select } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 
-export function LanguageSelector({ variant = "field" }: { variant?: "field" | "text" }) {
+export function LanguageSelector({ variant = "field", className }: { variant?: "field" | "text"; className?: string }) {
 	const id = useId();
 	const { locale, setLocale, t } = useLanguage();
 	const options = supportedLocales.map((value) => (
@@ -15,7 +16,7 @@ export function LanguageSelector({ variant = "field" }: { variant?: "field" | "t
 
 	if (variant === "text") {
 		return (
-			<Select id={id} aria-label={t("language.label")} value={locale} onChange={(event) => setLocale(resolveLocale(event.target.value))} containerClassName="contents" className="w-auto gap-1 rounded-md py-2 text-sm font-medium text-neutral-600 hover:text-neutral-950">
+			<Select id={id} aria-label={t("language.label")} value={locale} onChange={(event) => setLocale(resolveLocale(event.target.value))} containerClassName="contents" className={cn("w-auto gap-1 rounded-md py-2 text-sm font-medium text-neutral-600 hover:text-neutral-950", className)}>
 				{options}
 			</Select>
 		);
