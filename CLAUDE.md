@@ -176,9 +176,11 @@ Mailbox content authorization goes through `src/lib/mailboxes/access.ts` (`getMa
 
 `messages.status` is a free-text column driving the folder views: `received` (inbox), `sent`, `draft`, `spam`, `trash`, `archived`. Orthogonal to that are `starred`, `snoozedUntil`, and `folderId` (user-created folders in the `folders` table). A "folder" route under `src/app/(dashboard)/` is usually a status filter, not a table.
 
-### Licensing gates branding
+### Licensing is disabled in this fork
 
-Pro/Team keys are validated against Paymug (`src/lib/licenses/`); only a one-way key hash is stored. Without an active license the app falls back to the default name, icon, and favicon, and custom branding is unavailable. `getLicenseEntitlements` is the gate.
+Upstream gates branding, account management, shared mailboxes, booking hosts, forwarding and account seats behind Pro/Team keys validated against Paymug (`src/lib/licenses/`). This fork keeps that code but never gates on it: `getLicenseEntitlements` (`src/lib/licenses/service.ts`) always grants everything and `isTeamMailboxSharingEnabled` (`src/lib/mailboxes/access-utils.ts`) always returns true. `tests/license-unlock.test.mjs` pins both. The `/licenses` page still exists but is not linked, and `license_settings` is unused for decisions.
+
+After merging upstream, a conflict in either function or a failure in that test means upstream changed a gate: re-decide it by hand. A new upstream gate that reads `license_settings` directly will not conflict, so grep for `licenseSettings` after each merge.
 
 ### Self-update
 

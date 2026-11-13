@@ -120,20 +120,27 @@ test("listed owned and read-only shared mailboxes reuse authorization without a 
 	}
 });
 
-test("missing, disabled, private, invalid grants and inactive sharing remain inaccessible", async (t) => {
+test("missing, disabled, private and invalid grants remain inaccessible", async (t) => {
 	const f = await fixture(t);
 	for (const mailbox of ["missing", "disabled", "private"]) {
 		assert.equal((await GET(request(`mailboxId=${mailbox}`))).status, 404);
 	}
 	f.database.db.exec("UPDATE mailbox_access SET permission = 'invalid'");
 	assert.equal((await GET(request("mailboxId=shared"))).status, 404);
-	f.database.db.exec("UPDATE mailbox_access SET permission = 'read_only'; UPDATE license_settings SET state = 'inactive'");
-	assert.equal((await GET(request("mailboxId=shared"))).status, 404);
 	assert.equal(f.started.length, 0, "denied requests never load mail or enrichment");
 	f.user = null;
 	f.queries.length = 0;
 	assert.equal((await GET(request())).status, 401);
 	assert.equal(f.queries.length, 0);
+});
+
+test("a shared mailbox grant works without an active license", async (t) => {
+	const f = await fixture(t);
+	f.message("delegated", { mailbox: "shared", user: "other" });
+	f.database.db.exec("UPDATE license_settings SET state = 'inactive'");
+	const response = await GET(request("mailboxId=shared"));
+	assert.equal(response.status, 200);
+	assert.deepEqual((await response.json()).messages.map((row) => row.id), ["delegated"]);
 });
 
 test("explicit orphaned mailbox keeps the existing access fallback", async (t) => {
