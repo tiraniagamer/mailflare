@@ -19,6 +19,7 @@ await build({
 			export { isTeamMailboxSharingEnabled } from "./src/lib/mailboxes/access-utils.ts";
 			export { getBranding } from "./src/lib/branding/service.ts";
 			export { getAccountForwardingDestination } from "./src/lib/email/account-forwarding.ts";
+			export { fetchBranding } from "./src/components/branding-provider-utils.ts";
 		`,
 		resolveDir: root,
 		sourcefile: "license-unlock-test-entry.ts",
@@ -33,7 +34,7 @@ await build({
 	alias: { "next/headers": "next/headers.js", "next/server": "next/server.js", "cloudflare:workers": "./server/runtime/cloudflare-workers.ts" },
 	logLevel: "silent",
 });
-const { SqliteDatabase, applyMigrations, getLicenseEntitlements, isTeamMailboxSharingEnabled, getBranding, getAccountForwardingDestination } =
+const { SqliteDatabase, applyMigrations, getLicenseEntitlements, isTeamMailboxSharingEnabled, getBranding, getAccountForwardingDestination, fetchBranding } =
 	await import(pathToFileURL(join(directory, "entry.mjs")).href);
 
 const UNLOCKED = {
@@ -84,6 +85,11 @@ test("a stored forwarding address is honoured with no license", async (t) => {
 			VALUES ('m-sam', 'sam', 'one', 'sam', 'Sam', 'personal', 0, 0, 1);
 	`);
 	assert.equal(await getAccountForwardingDestination(f.env, "sam@one.test"), "away@elsewhere.test");
+});
+
+test("a failed branding request does not lock the branding page", async (t) => {
+	t.mock.method(globalThis, "fetch", async () => new Response("unavailable", { status: 503 }));
+	assert.equal((await fetchBranding()).canCustomizeBranding, true);
 });
 
 test("the admin navigation and landing page do not link to the license page", () => {

@@ -178,13 +178,15 @@ Mailbox content authorization goes through `src/lib/mailboxes/access.ts` (`getMa
 
 ### Licensing is disabled in this fork
 
-Upstream gates branding, account management, shared mailboxes, booking hosts, forwarding and account seats behind Pro/Team keys validated against Paymug (`src/lib/licenses/`). This fork keeps that code but never gates on it: `getLicenseEntitlements` (`src/lib/licenses/service.ts`) always grants everything and `isTeamMailboxSharingEnabled` (`src/lib/mailboxes/access-utils.ts`) always returns true. `tests/license-unlock.test.mjs` pins both. The `/licenses` page still exists but is not linked, and `license_settings` is unused for decisions.
+Upstream gates branding, account management, shared mailboxes, booking hosts, forwarding and account seats behind Pro/Team keys validated against Paymug (`src/lib/licenses/`). This fork keeps that code but never gates on it: `getLicenseEntitlements` (`src/lib/licenses/service.ts`) always grants everything and `isTeamMailboxSharingEnabled` (`src/lib/mailboxes/access-utils.ts`) always returns true. The client fallback `DEFAULT_BRANDING` (`src/components/branding-provider-utils.ts`) also reports branding as customizable. `tests/license-unlock.test.mjs` pins all three. The `/licenses` page still exists but is not linked, and `license_settings` is unused for decisions.
 
-After merging upstream, a conflict in either function or a failure in that test means upstream changed a gate: re-decide it by hand. A new upstream gate that reads `license_settings` directly will not conflict, so grep for `licenseSettings` after each merge.
+**Do not use the dashboard "Update" button on this fork.** `deploy-update.yml` replaces the whole tracked tree with upstream (`git read-tree --reset`), which silently restores every gate and deletes the pinning test with no conflict. Update with `git merge upstream/main` and run `node --test tests/*.test.mjs`. Leaving `MAILFLARE_UPDATE_TOKEN` and `GITHUB_UPDATE_TOKEN` unset keeps the button inert.
+
+After merging upstream, a conflict in a patched function or a failure in that test means upstream changed a gate: re-decide it by hand. A new upstream gate elsewhere will not conflict, so after each merge run `grep -rniE "licenseSettings|license_settings|getLicenseStatus|api/licenses|canCustomizeBranding: false" src server` and re-check the admin nav and landing links.
 
 ### Self-update
 
-The admin overview dispatches `deploy-update.yml` (constant in `src/app/api/admin/update/utils.ts`) in the installation repo, which merges the upstream default branch and pushes it. It does not migrate, build, or deploy; the connected Cloudflare Git integration deploys the push. The admin update card separately reports and applies pending D1 migrations through the Worker binding.
+The admin overview dispatches `deploy-update.yml` (constant in `src/app/api/admin/update/utils.ts`) in the installation repo, which replaces the repository's tracked tree with the upstream default branch (it does not merge, so local changes are lost) and pushes it. It does not migrate, build, or deploy; the connected Cloudflare Git integration deploys the push. The admin update card separately reports and applies pending D1 migrations through the Worker binding.
 
 ## Conventions
 

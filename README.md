@@ -135,7 +135,7 @@ A schema change needs a migration for each database type. See [Databases](docs/d
 - [Adding a language](docs/localization.md)
 - [Troubleshooting](docs/troubleshooting.md)
 
-> This fork (2026-11) removes the Pro/Team license gating of upstream Mailflare; every feature is enabled. Licensed under the same AGPL-3.0.
+> This fork (2026-11) removes the Pro/Team license gating of upstream Mailflare; every feature is enabled. Licensed under the same AGPL-3.0. Do not use the dashboard "Update" button here: it replaces the repository with upstream and undoes this change. Update with `git merge upstream/main` instead.
 
 ## License
 

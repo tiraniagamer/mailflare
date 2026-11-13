@@ -3,7 +3,8 @@ import type { Branding } from "@/lib/branding/types";
 export const DEFAULT_BRANDING: Branding = {
 	appName: "Mailflare",
 	hasCustomIcon: false,
-	canCustomizeBranding: false,
+	// Branding is never license-locked in this fork, so a failed request must not show the lock card.
+	canCustomizeBranding: true,
 };
 
 export async function fetchBranding(): Promise<Branding> {
