@@ -47,5 +47,8 @@ export const locales = {
 } satisfies Record<string, LocaleEntry>;
 
 export type Locale = keyof typeof locales;
-export const DEFAULT_LOCALE = "en" satisfies Locale;
+/** The catalog bundled with the app (`en.json`), and the per-key fallback for every other catalog. */
+export const SOURCE_LOCALE = "en" satisfies Locale;
+/** The language used when no preference cookie is set. */
+export const DEFAULT_LOCALE = "es" satisfies Locale;
 export const supportedLocales = Object.keys(locales) as Locale[];

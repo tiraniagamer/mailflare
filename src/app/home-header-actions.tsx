@@ -2,9 +2,7 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/components/language-provider";
-import { LanguageSelector } from "@/components/language-selector";
 import { Button } from "@/components/ui/button";
-import { getHomeActions } from "./utils";
 import { HomeAccountMenu } from "./home-account-menu";
 import { useHomeAuth } from "./home-auth";
 
@@ -14,12 +12,8 @@ export function HomeHeaderActions() {
 	if (user) return <HomeAccountMenu user={user} />;
 
 	return (
-		<>
-			{getHomeActions(false).map((action) => (
-				<Button key={action.href} variant={action.variant} asChild>
-					<Link href={action.href}>{t(action.labelKey)}</Link>
-				</Button>
-			))}
-		</>
+		<Button asChild>
+			<Link href="/login">{t("home.logIn")}</Link>
+		</Button>
 	);
 }

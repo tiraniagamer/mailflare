@@ -113,8 +113,8 @@ test("every registered catalog has the English keys and nonempty messages and la
 	}
 });
 
-test("missing, invalid and unsupported locale values fall back to English", () => {
-	for (const value of [undefined, null, "", "not-a-registered-locale", "pt-BR; Path=/", {}]) assert.equal(i18n.resolveLocale(value), "en");
+test("missing, invalid and unsupported locale values fall back to Spanish", () => {
+	for (const value of [undefined, null, "", "not-a-registered-locale", "pt-BR; Path=/", {}]) assert.equal(i18n.resolveLocale(value), "es");
 	assert.equal(i18n.resolveLocale("en"), "en");
 	assert.equal(i18n.resolveLocale("pt-BR"), "pt-BR");
 });
@@ -133,7 +133,7 @@ test("existing locale-specific plural translations remain available", async () =
 test("preference cookie persists for a year, covers every path and is Secure on HTTPS", () => {
 	assert.equal(i18n.serializeLocaleCookie("pt-BR", true), "mailflare-locale=pt-BR; Path=/; Max-Age=31536000; SameSite=Lax; Secure");
 	assert.equal(i18n.serializeLocaleCookie("en", false), "mailflare-locale=en; Path=/; Max-Age=31536000; SameSite=Lax");
-	assert.equal(i18n.serializeLocaleCookie("bad; Domain=example.com", true), "mailflare-locale=en; Path=/; Max-Age=31536000; SameSite=Lax; Secure");
+	assert.equal(i18n.serializeLocaleCookie("bad; Domain=example.com", true), "mailflare-locale=es; Path=/; Max-Age=31536000; SameSite=Lax; Secure");
 });
 
 test("provider server rendering uses initial locale and labels the native language selector", async () => {
@@ -150,10 +150,13 @@ test("root layout passes the same cookie locale to HTML and provider on first re
 	assert.match(pt, /<html lang="pt-BR"/);
 	assert.match(pt, /<span>Entrada<\/span>/);
 	for (const value of [undefined, "bad"]) {
-		const english = await i18n.renderLayout(value);
-		assert.match(english, /<html lang="en"/);
-		assert.match(english, />Inbox<\/span>/);
+		const spanish = await i18n.renderLayout(value);
+		assert.match(spanish, /<html lang="es"/);
+		assert.match(spanish, />Recibidos<\/span>/);
 	}
+	const english = await i18n.renderLayout("en");
+	assert.match(english, /<html lang="en"/);
+	assert.match(english, />Inbox<\/span>/);
 });
 
 test("a locale registered once reaches resolution, translation, cookie, selector and SSR", async () => {
@@ -180,7 +183,7 @@ test("a locale registered once reaches resolution, translation, cookie, selector
 	assert.equal(t("navigation.inbox", { count: 3 }), "3 entradas");
 	assert.equal(t("navigation.inbox"), "Entrada");
 	for (const invalid of ["constructor", "toString", "__proto__"]) {
-		assert.equal(extended.resolveLocale(invalid), "en");
+		assert.equal(extended.resolveLocale(invalid), "es");
 	}
 });
 

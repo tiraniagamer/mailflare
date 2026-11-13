@@ -1,8 +1,8 @@
 import en from "./en.json";
-import { DEFAULT_LOCALE, locales } from "./locales";
+import { DEFAULT_LOCALE, SOURCE_LOCALE, locales } from "./locales";
 import type { Locale, Messages, PluralKey, TranslationKey } from "./types";
 
-export { DEFAULT_LOCALE } from "./locales";
+export { DEFAULT_LOCALE, SOURCE_LOCALE } from "./locales";
 export const LOCALE_COOKIE = "mailflare-locale";
 export const LOCALE_COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
 
@@ -19,7 +19,7 @@ export type AssetReader = (path: string) => Promise<Response>;
 
 /** Fetches the catalog for a locale; English is already bundled, others load on demand from `public/locales`. */
 export async function loadMessages(locale: Locale, read: AssetReader = (path) => fetch(path)): Promise<Partial<Messages>> {
-	if (locale === DEFAULT_LOCALE) return en;
+	if (locale === SOURCE_LOCALE) return en;
 	const response = await read(`/locales/${locale}.json`);
 	if (!response.ok) throw new Error(`Catalog for ${locale} is unavailable (${response.status})`);
 	return response.json();
@@ -60,4 +60,4 @@ export function serializeLocaleCookie(locale: Locale, secure: boolean): string {
 }
 
 /** Default for pure helpers that take an optional translator, so callers without one (and tests) get English. */
-export const defaultTranslator: Translator = createTranslator(DEFAULT_LOCALE, en);
+export const defaultTranslator: Translator = createTranslator(SOURCE_LOCALE, en);
