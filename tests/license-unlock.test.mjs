@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mkdtempSync, rmSync } from "node:fs";
+import { mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { dirname, join } from "node:path";
 import test, { after } from "node:test";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -84,4 +84,16 @@ test("a stored forwarding address is honoured with no license", async (t) => {
 			VALUES ('m-sam', 'sam', 'one', 'sam', 'Sam', 'personal', 0, 0, 1);
 	`);
 	assert.equal(await getAccountForwardingDestination(f.env, "sam@one.test"), "away@elsewhere.test");
+});
+
+test("the admin navigation and landing page do not link to the license page", () => {
+	for (const file of ["src/components/admin-nav.tsx", "src/app/(admin)/admin/page.tsx"]) {
+		assert.doesNotMatch(readFileSync(join(root, file), "utf8"), /["']\/licenses["']/, file);
+	}
+});
+
+test("the upgrade indicator never asks the server for the license", () => {
+	const source = readFileSync(join(root, "src/components/license-indicator.tsx"), "utf8");
+	assert.doesNotMatch(source, /loadLicenseIndicatorStatus|license\.upgrade/);
+	assert.match(source, /export function LicenseIndicator\(\)/);
 });
